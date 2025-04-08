@@ -16,8 +16,7 @@ public:
     virtual void read_game(const std::string& filename) = 0;
 
     // Provide read-only access to the table layout
-    const std::unordered_map<uint64_t, std::unordered_map<uint64_t, bool>>&
-    get_table_layout() const {
+    const std::unordered_map<uint64_t, std::unordered_map<uint64_t, bool>>& get_table_layout() const {
         return this->table_layout;
     }
 

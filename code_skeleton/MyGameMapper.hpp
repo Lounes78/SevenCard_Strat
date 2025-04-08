@@ -40,9 +40,12 @@ public:
     bool hasRegisteredStrategies() const;
 
 private:
+
     // You can define any data structures needed to track the game
     // E.g., player hands, table layout, random engine, etc.
     // ...
+
+    
 };
 
 } // namespace sevens
