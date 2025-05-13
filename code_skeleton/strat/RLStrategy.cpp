@@ -80,7 +80,7 @@ int RLStrategy::selectCardToPlay(
     }
     
     // Remember the card we played
-    if (last_action >= 0 && last_action < hand.size()) {
+    if (last_action >= 0 && static_cast<size_t>(last_action) < hand.size()) {
         last_card_played = hand[last_action];
     }
     
@@ -193,3 +193,9 @@ void RLStrategy::updateState(const std::vector<Card>& hand,
 }
 
 } // namespace sevens
+
+#ifdef BUILD_SHARED_LIB
+extern "C" sevens::PlayerStrategy* createStrategy() {
+    return new sevens::RLStrategy();
+}
+#endif
