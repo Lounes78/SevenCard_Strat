@@ -1,6 +1,8 @@
 #pragma once
 
-#include "Generic_game_parser.hpp"
+#include "../../card/Generic_card_parser.hpp"
+#include "../parser/Generic_game_parser.hpp"
+
 #include <string>
 #include <vector>
 #include <utility>

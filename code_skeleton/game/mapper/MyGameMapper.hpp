@@ -1,7 +1,7 @@
 #pragma once
 
 #include "Generic_game_mapper.hpp"
-#include "PlayerStrategy.hpp"
+#include "../../strat/PlayerStrategy.hpp"
 #include <random>
 #include <unordered_map>
 #include <vector>
@@ -39,13 +39,28 @@ public:
     void registerStrategy(uint64_t playerID, std::shared_ptr<PlayerStrategy> strategy);
     bool hasRegisteredStrategies() const;
 
-private:
 
-    // You can define any data structures needed to track the game
-    // E.g., player hands, table layout, random engine, etc.
-    // ...
+private:
+    std::default_random_engine rng;
+    std::unordered_map<uint64_t, std::shared_ptr<PlayerStrategy>> player_strategies;
+    std::vector<std::vector<Card>> player_hands;
+    // std::vector<std::vector<bool>> table_cards;
+    std::unordered_map<uint64_t, std::unordered_map<uint64_t, bool>> table_cards;
+
 
     
+    // Helper methods
+    void setupGame(uint64_t numPlayers);
+    void dealCards();
+    void initializeTable();
+    bool isGameOver();
+    void playRound(bool verbose);
+    std::vector<Card> getValidMoves(size_t player_id);
+    bool isValidMove(const Card& card);
+    void makeMove(size_t player_id, const Card& card, bool verbose);
+    std::vector<std::pair<uint64_t, uint64_t>> getFinalRankings();
+
+
 };
 
 } // namespace sevens

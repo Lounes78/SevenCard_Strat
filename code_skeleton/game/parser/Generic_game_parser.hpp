@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Generic_card_parser.hpp"
+#include "../../card/Generic_card_parser.hpp"
 #include <unordered_map>
 #include <string>
 

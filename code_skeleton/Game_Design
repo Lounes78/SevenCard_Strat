@@ -2,7 +2,7 @@ Class Hierarchy
 Generic_card_parser (Abstract Base Class)
 ├── MyCardParser (Concrete Implementation)
 └── Generic_game_parser (Abstract Base Class, extends Generic_card_parser)
-    ├── MyGameParser (Concrete Implementation)
+    ├── MyGameParser (Concrete Implementation)  DONE
     └── Generic_game_mapper (Abstract Base Class, extends Generic_game_parser)
         └── MyGameMapper (Concrete Implementation)
 
